@@ -7,28 +7,72 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>Login</h1>
+    <h1>Login</h1>
 
-        <form>
+    <form onsubmit="login(event)">
 
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" required>
+        <label>Email</label>
+        <input
+            type="text"
+            id="email"
+            placeholder="Enter email"
+            required
+        >
 
-            <label>Password</label>
-            <input type="password" placeholder="Enter your password" required>
+        <label>Password</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            required
+        >
 
-            <button type="submit">Login</button>
+        <button type="submit">
+            Login
+        </button>
 
-            <p>
-                Don't have an account?
-                <a href="#">Sign Up</a>
-            </p>
+        <p id="error"></p>
 
-        </form>
+    </form>
 
-    </div>
+</div>
+
+<script>
+
+function login(event){
+
+event.preventDefault();
+
+let email =
+document.getElementById("email").value;
+
+let password =
+document.getElementById("password").value;
+
+if(
+email === "@aditi"
+&&
+password === "123"
+){
+
+window.location.href =
+"dashboard.html";
+
+}
+
+else{
+
+document.getElementById("error")
+.innerHTML =
+"Invalid Email or Password";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
